@@ -8,6 +8,9 @@ class Province(models.Model):
     createdDate = models.DateField(auto_now_add=True)
     updateDate = models.DateField()
 
+    def __str__(self):
+        return self.pName
+
 class Amphoe(models.Model):
     aCode = models.IntegerField(default='0')
     aName = models.CharField(max_length=100, default='')
@@ -15,6 +18,9 @@ class Amphoe(models.Model):
     pName = models.CharField(max_length=100, default='')
     createdDate = models.DateField(auto_now_add=True)
     updateDate = models.DateField()
+
+    def __str__(self):
+        return self.aName
 
 class Tambol(models.Model):
     tCode = models.IntegerField(default='0')
@@ -25,10 +31,16 @@ class Tambol(models.Model):
     pName = models.CharField(max_length=100, default='')
     postCode = models.IntegerField(default='0')
     createdDate = models.DateField(auto_now_add=True)
-    updateDate = models.DateField() 
+    updateDate = models.DateField()
+
+    def __str__(self):
+        return self.tName
 
 class Pzone(models.Model):
     zCode = models.IntegerField(default='0')
     zName = models.CharField(max_length=100, default='')
     createdDate = models.DateField(auto_now_add=True)
-    updateDate = models.DateField()       
+    updateDate = models.DateField()
+
+    def __str__(self):
+        return self.zName
